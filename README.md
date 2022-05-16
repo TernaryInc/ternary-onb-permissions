@@ -24,7 +24,7 @@ You can download the [Project Custom Role][project custom role tf] and [Organiza
        See the License for the specific language governing permissions and
        limitations under the License.
 
-[project custom role yaml]: https://github.com/TernaryInc/ternary-onb-permissions/blob/master/Project-role.yaml
-[org custom role yaml]: https://github.com/TernaryInc/ternary-onb-permissions/blob/master/Org-role.yaml
-[project custom role tf]: https://github.com/TernaryInc/ternary-onb-permissions/blob/master/Project-role.tf
-[org custom role tf]: https://github.com/TernaryInc/ternary-onb-permissions/blob/master/Org-role.tf
+[project custom role yaml]: Project-role.yaml
+[org custom role yaml]: Org-role.yaml
+[project custom role tf]: Project-role.tf
+[org custom role tf]: Org-role.tf
