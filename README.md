@@ -1,10 +1,10 @@
 # Ternary Onboarding Permissions
 
-Permissions for Ternary to access your cloud for cost insights.
+In this repo, Ternary enumerates the list of permissions that are required to onboard to the platform.  For your convenience, they are provided as both Terraform and YAML configuration files.
 
 ## Download
 
-In order to give permissions to Ternary in gcloud you need to download the appropiate YAML file based on your choice: [Project Custom Role][project custom role yaml] or [Organization Custom Role][org custom role yaml]. Save this file as role.yaml.
+In order to give permissions to the Ternary service account you were provided in initial onboarding steps, you'll need to download the appropriate YAML based on your choice to onboard a single project or an entire organization: [Project Custom Role][project custom role yaml] or [Organization Custom Role][org custom role yaml] respectively.
 
 You can download the [Project Custom Role][project custom role tf] and [Organization Custom Role][org custom role tf] in Terraform format for your convenience. As Terraform projects vary widely, we do not provide official steps for how to integrate this into your Terraform workspace and leave this step to the reader.
 
