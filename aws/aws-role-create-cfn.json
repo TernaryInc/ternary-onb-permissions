@@ -43,9 +43,12 @@
                                         "cloudwatch:GetMetricData",
                                         "compute-optimizer:GetEC2InstanceRecommendations",
                                         "compute-optimizer:GetAutoScalingGroupRecommendations",
+                                        "compute-optimizer:GetEBSVolumeRecommendations",
                                         "rds:DescribeReservedDBInstancesOfferings",
                                         "ce:GetReservationPurchaseRecommendation",
-                                        "ce:GetSavingsPlansPurchaseRecommendation"
+                                        "ce:GetSavingsPlansPurchaseRecommendation",
+                                        "EC2:DescribeVolumes",
+                                        "EC2:DescribeInstances"
                                     ],
                                     "Resource": "*"
                                 },
