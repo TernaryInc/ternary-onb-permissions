@@ -23,7 +23,12 @@ data "aws_iam_policy_document" "ternary_cmp_service_agent_permissions" {
       "cloudwatch:ListMetricStreams",
       "cloudwatch:ListTagsForResource",
       "cloudwatch:GetMetricStatistics",
-      "cloudwatch:ListMetrics"
+      "cloudwatch:ListMetrics",
+      "compute-optimizer:GetEC2InstanceRecommendations",
+      "compute-optimizer:GetAutoScalingGroupRecommendations",
+      "rds:DescribeReservedDBInstancesOfferings",
+      "ce:GetReservationPurchaseRecommendation",
+      "ce:GetSavingsPlansPurchaseRecommendation",
     ]
     resources = ["*"]
   }

@@ -40,7 +40,12 @@
                                         "cloudwatch:ListMetrics",
                                         "cloudwatch:ListMetricStreams",
                                         "cloudwatch:GetMetricStatistics",
-                                        "cloudwatch:GetMetricData"
+                                        "cloudwatch:GetMetricData",
+                                        "compute-optimizer:GetEC2InstanceRecommendations",
+                                        "compute-optimizer:GetAutoScalingGroupRecommendations",
+                                        "rds:DescribeReservedDBInstancesOfferings",
+                                        "ce:GetReservationPurchaseRecommendation",
+                                        "ce:GetSavingsPlansPurchaseRecommendation"
                                     ],
                                     "Resource": "*"
                                 },
