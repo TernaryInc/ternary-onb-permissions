@@ -40,7 +40,18 @@
                                         "cloudwatch:ListMetrics",
                                         "cloudwatch:ListMetricStreams",
                                         "cloudwatch:GetMetricStatistics",
-                                        "cloudwatch:GetMetricData"
+                                        "cloudwatch:GetMetricData",
+                                        "compute-optimizer:GetEC2InstanceRecommendations",
+                                        "compute-optimizer:GetAutoScalingGroupRecommendations",
+                                        "compute-optimizer:GetEBSVolumeRecommendations",
+                                        "compute-optimizer:GetLambdaFunctionRecommendations",
+                                        "rds:DescribeReservedDBInstancesOfferings",
+                                        "ce:GetReservationPurchaseRecommendation",
+                                        "ce:GetSavingsPlansPurchaseRecommendation",
+                                        "EC2:DescribeVolumes",
+                                        "EC2:DescribeInstances",
+                                        "lambda:ListFunctions",
+                                        "lambda:ListProvisionedConcurrencyConfigs"
                                     ],
                                     "Resource": "*"
                                 },
