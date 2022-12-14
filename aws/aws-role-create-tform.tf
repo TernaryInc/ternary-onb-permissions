@@ -31,6 +31,7 @@ data "aws_iam_policy_document" "ternary_cmp_service_agent_permissions" {
       "rds:DescribeReservedDBInstancesOfferings",
       "ce:GetReservationPurchaseRecommendation",
       "ce:GetSavingsPlansPurchaseRecommendation",
+      "ce:GetRightsizingRecommendation",
       "EC2:DescribeVolumes",
       "EC2:DescribeInstances",
       "lambda:ListFunctions",

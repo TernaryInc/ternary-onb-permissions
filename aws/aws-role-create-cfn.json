@@ -48,6 +48,7 @@
                                         "rds:DescribeReservedDBInstancesOfferings",
                                         "ce:GetReservationPurchaseRecommendation",
                                         "ce:GetSavingsPlansPurchaseRecommendation",
+                                        "ce:GetRightsizingRecommendation",
                                         "EC2:DescribeVolumes",
                                         "EC2:DescribeInstances",
                                         "lambda:ListFunctions",
