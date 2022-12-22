@@ -1,16 +1,24 @@
 # Ternary Onboarding Permissions
 
-In this repo, Ternary enumerates the list of permissions that are required to onboard to the platform.  For your convenience, they are provided as both Terraform and YAML configuration files.
+In this repo, Ternary enumerates the list of permissions that are required to onboard to the platform for supported cloud providers. For your convenience, they are provided in multiple formats: Terraform, YAML configuration files, Cloud Formation where applicable.
 
-## Download
+## GCP
 
 In order to give permissions to the Ternary service account you were provided in initial onboarding steps, you'll need to download the appropriate YAML based on your choice to onboard a single project or an entire organization: [Project Custom Role][project custom role yaml] or [Organization Custom Role][org custom role yaml] respectively.
 
 You can download the [Project Custom Role][project custom role tf] and [Organization Custom Role][org custom role tf] in Terraform format for your convenience. As Terraform projects vary widely, we do not provide official steps for how to integrate this into your Terraform workspace and leave this step to the reader.
 
+## AWS
+
+Permissions necessary to onboard AWS by creating the required role are outlined in [Terraform](./aws/aws-role-create-tform.tf) and [Cloud Formation](./aws/aws-role-create-cfn.json).
+
+## Azure
+
+Ternary's public Azure pem file is located in [Azure pem](./azure/ca.pem).
+
 # License
 
-       Copyright 2022 Ternary, Inc.
+       Copyright 2023 Ternary, Inc.
 
        Licensed under the Apache License, Version 2.0 (the "License");
        you may not use this file except in compliance with the License.
@@ -24,7 +32,7 @@ You can download the [Project Custom Role][project custom role tf] and [Organiza
        See the License for the specific language governing permissions and
        limitations under the License.
 
-[project custom role yaml]: Project-role.yaml
-[org custom role yaml]: Org-role.yaml
-[project custom role tf]: Project-role.tf
-[org custom role tf]: Org-role.tf
+[project custom role yaml]: ./gcp/Project-role.yaml
+[org custom role yaml]: ./gcp/Org-role.yaml
+[project custom role tf]: ./gcp/Project-role.tf
+[org custom role tf]: ./gcp/Org-role.tf
