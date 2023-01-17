@@ -36,6 +36,7 @@
                                     "Effect": "Allow",
                                     "Action": [
                                         "s3:ListAllMyBuckets",
+                                        "s3:GetLifecycleConfiguration",
                                         "cloudwatch:ListTagsForResource",
                                         "cloudwatch:ListMetrics",
                                         "cloudwatch:ListMetricStreams",
