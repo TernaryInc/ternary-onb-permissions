@@ -19,6 +19,7 @@ data "aws_iam_policy_document" "ternary_cmp_service_agent_permissions" {
     effect = "Allow"
     actions = [
       "s3:ListAllMyBuckets",
+      "s3:GetLifecycleConfiguration",
       "cloudwatch:GetMetricData",
       "cloudwatch:ListMetricStreams",
       "cloudwatch:ListTagsForResource",
