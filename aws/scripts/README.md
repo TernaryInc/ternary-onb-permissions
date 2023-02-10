@@ -1,4 +1,6 @@
 # AWS Multi Account Onboarding Instructions
+### Why use this script?
+The primary reason to use this script is to enable centralized, multi-account monitoring in AWS. You may choose to do this via the AWS console, but the process involves multiple steps that can be prone to human error. Additionally, this process must be repeated in each AWS region you wish to collect metrics in. This script will automate the process and deploy the necessary resources in each region you specify (or all AWS default regions) for a quick and seamless onboarding to AWS Centralized CloudWatch Monitoring.
 
 ### Prerequisites:
 - [`Python3`](https://www.python.org/downloads/) (We're using 3.11)
