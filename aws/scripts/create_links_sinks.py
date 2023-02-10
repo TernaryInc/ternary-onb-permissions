@@ -5,12 +5,12 @@ from jinja2 import Environment, FileSystemLoader, select_autoescape
 
 # Set up parser to accept CLI flags
 parser = argparse.ArgumentParser(add_help=True)
-parser.add_argument('--organization', help="AWS Organization", type=str)
-parser.add_argument('--organization-unit', help="AWS Organization Unit", type=str)
-parser.add_argument('--sink-name', help="Human-friendly AWS Metric Sink Name, defaults to \"Centralized-Monitoring\"", type=str)
-parser.add_argument('--profile', help="AWS CLI Config Profile Name for the Management Account, uses your default AWS profile if not specified", type=str)
-parser.add_argument('--regions', help="Double quoted, comma separated list of regions to create a sink and StackSet in. If not specified, ", type=str)
-parser.add_argument('--excluded-accounts', help="[Optional] double quoted, comma separated list of accounts to exclude (ex. --exclude \"12345678910, 09876543210\"). Must exclude suspended accounts", type=str)
+parser.add_argument('--organization', help="AWS Organization", type=str, required=True)
+parser.add_argument('--organization-unit', help="AWS Organization Unit", type=str, required=True)
+parser.add_argument('--sink-name', help="Human-friendly AWS Metric Sink Name, defaults to \"Centralized-Monitoring\"", type=str, required=False, default="Centralized-Monitoring")
+parser.add_argument('--profile', help="AWS CLI Config Profile Name for the Management Account, uses your default AWS profile if not specified", type=str, required=False, default=None)
+parser.add_argument('--regions', help="Double quoted, comma separated list of regions to create a sink and StackSet in. If not specified, a Sink/StackSet will be created in all default AWS regions", type=str, required=False)
+parser.add_argument('--excluded-accounts', help="[Optional] double quoted, comma separated list of accounts to exclude (ex. --exclude \"12345678910, 09876543210\"). Must exclude suspended accounts", type=str, required=False, default=None)
 
 # AWS Default regions
 aws_default_regions = ["us-east-2", "us-east-1", "us-west-1", "us-west-2",
@@ -118,32 +118,23 @@ def monitoring_onboarding():
     # Fetch/validate CLI args
     args = parser.parse_args()
     arg_dict = vars(args)
-    if arg_dict['organization'] is not None:
-        organization = arg_dict['organization']
-    else:
-        raise Exception('--organization-id is required')
+    
+    organization = arg_dict['organization']
 
-    if arg_dict['organization_unit'] is not None:
-        organization_unit = arg_dict['organization_unit']
-    else:
-        raise Exception('--organization-unit is required')
+    organization_unit = arg_dict['organization_unit']
 
     if arg_dict['regions'] is not None:
         regions = arg_dict['regions'].split(',')
     else:
         regions = aws_default_regions
     
-    sink_name = 'Centralized-Monitoring'
-    if arg_dict['sink_name'] is not None:
-        sink_name = arg_dict['sink_name']
+    sink_name = arg_dict['sink_name']
 
-    profile = None
-    if arg_dict['profile'] is not None:
-        profile = arg_dict['profile']
+    profile = arg_dict['profile']
 
-    excluded_accounts = None
     if arg_dict['excluded_accounts'] is not None:
         excluded_accounts = arg_dict['excluded_accounts'].split(',')
+
     print("========== STARTING ==========")
     # iterate over regions, creating sinks and stacksets
     for region in regions:
