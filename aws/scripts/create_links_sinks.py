@@ -132,6 +132,7 @@ def monitoring_onboarding():
 
     profile = arg_dict['profile']
 
+    excluded_accounts = None
     if arg_dict['excluded_accounts'] is not None:
         excluded_accounts = arg_dict['excluded_accounts'].split(',')
 
