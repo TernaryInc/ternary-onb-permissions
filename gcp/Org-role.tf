@@ -47,6 +47,8 @@ resource "google_organization_iam_custom_role" "ternary_service_agent" {
     "recommender.spendBasedCommitmentRecommendations.list",
     "recommender.usageCommitmentRecommendations.get",
     "recommender.usageCommitmentRecommendations.list",
+    "recommender.networkAnalyzerIpAddressInsights.get",
+    "recommender.networkAnalyzerIpAddressInsights.list",
     "resourcemanager.folders.get",
     "resourcemanager.folders.list",
     "resourcemanager.organizations.get",
