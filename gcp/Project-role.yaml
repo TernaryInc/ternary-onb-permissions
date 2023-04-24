@@ -11,7 +11,7 @@ includedPermissions:
   - bigquery.reservations.get # BigQuery Visibility Feature
   - bigquery.reservations.list # BigQuery Visibility Feature
   - cloudasset.assets.exportResource # Find projects with a specific asset type (ex. CUD, Compute Instance, etc.)
-  - compute.commitments.list # GCE CUD Planning feature
+  - compute.commitments.list # GCE CUD Planning feature, CUD expiration alerts
   - monitoring.timeSeries.list # Gather metrics, used in multiple features
   - recommender.cloudsqlIdleInstanceRecommendations.get # [Future] Cloud SQL Idle Resource Recommendations
   - recommender.cloudsqlIdleInstanceRecommendations.list # [Future] Cloud SQL Idle Resource Recommendations
