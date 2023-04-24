@@ -23,20 +23,20 @@ includedPermissions:
   - recommender.computeAddressIdleResourceInsights.list # [Future] Compute Engine Idle IP Address Recommendations
   - recommender.computeAddressIdleResourceRecommendations.get # [Future] Compute Engine Idle IP Address Recommendations
   - recommender.computeAddressIdleResourceRecommendations.list # [Future] Compute Engine Idle IP Address Recommendations
-  - recommender.computeDiskIdleResourceInsights.get # [Future] Compute Engine Idle Disk Recommendations
-  - recommender.computeDiskIdleResourceInsights.list # [Future] Compute Engine Idle Disk Recommendations
-  - recommender.computeDiskIdleResourceRecommendations.get # [Future] Compute Engine Idle Disk Recommendations
-  - recommender.computeDiskIdleResourceRecommendations.list # [Future] Compute Engine Idle Disk Recommendations
+  - recommender.computeDiskIdleResourceInsights.get # Compute Engine Idle Disk Recommendations
+  - recommender.computeDiskIdleResourceInsights.list # Compute Engine Idle Disk Recommendations
+  - recommender.computeDiskIdleResourceRecommendations.get # Compute Engine Idle Disk Recommendations
+  - recommender.computeDiskIdleResourceRecommendations.list # Compute Engine Idle Disk Recommendations
   - recommender.computeImageIdleResourceInsights.get # [Future] Compute Engine Unused Custom Image Recommendation
   - recommender.computeImageIdleResourceInsights.list # [Future] Compute Engine Unused Custom Image Recommendation
   - recommender.computeImageIdleResourceRecommendations.get # [Future] Compute Engine Unused Custom Image Recommendation
   - recommender.computeImageIdleResourceRecommendations.list # [Future] Compute Engine Unused Custom Image Recommendation
-  - recommender.computeInstanceIdleResourceRecommendations.get # [Future] Compute Engine Idle Resource Recommendations
-  - recommender.computeInstanceIdleResourceRecommendations.list # [Future] Compute Engine Idle Resource Recommendations
-  - recommender.computeInstanceMachineTypeRecommendations.get # [Future] Compute Engine Instance Rightsizing Recommendations
-  - recommender.computeInstanceMachineTypeRecommendations.list # [Future] Compute Engine Instance Rightsizing Recommendations
-  - recommender.computeInstanceGroupManagerMachineTypeRecommendations.get # [Future] Compute Engine Instance Group Rightsizing Recommendations
-  - recommender.computeInstanceGroupManagerMachineTypeRecommendations.list # [Future] Compute Engine Instance Group Rightsizing Recommendations
+  - recommender.computeInstanceIdleResourceRecommendations.get # Compute Engine Idle Resource Recommendations
+  - recommender.computeInstanceIdleResourceRecommendations.list # Compute Engine Idle Resource Recommendations
+  - recommender.computeInstanceMachineTypeRecommendations.get # Compute Engine Instance Rightsizing Recommendations
+  - recommender.computeInstanceMachineTypeRecommendations.list # Compute Engine Instance Rightsizing Recommendations
+  - recommender.computeInstanceGroupManagerMachineTypeRecommendations.get # Compute Engine Instance Group Rightsizing Recommendations
+  - recommender.computeInstanceGroupManagerMachineTypeRecommendations.list # Compute Engine Instance Group Rightsizing Recommendations
   - recommender.resourcemanagerProjectUtilizationRecommendations.get # [Future] Unattended Project Recommendations
   - recommender.resourcemanagerProjectUtilizationRecommendations.list # [Future] Unattended Project Recommendations
   - recommender.spendBasedCommitmentRecommendations.get # [Future] Spend Based Commitment Recommendations
