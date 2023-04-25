@@ -1,51 +1,51 @@
 description: Ternary CMP Service Agent
 includedPermissions:
-  - bigquery.bireservations.get
-  - bigquery.capacityCommitments.get
-  - bigquery.capacityCommitments.list
-  - bigquery.jobs.get
-  - bigquery.jobs.list
-  - bigquery.jobs.listAll
-  - bigquery.reservationAssignments.list
-  - bigquery.reservationAssignments.search
-  - bigquery.reservations.get
-  - bigquery.reservations.list
-  - cloudasset.assets.exportResource
-  - compute.commitments.list
-  - monitoring.timeSeries.list
-  - recommender.cloudsqlIdleInstanceRecommendations.get
-  - recommender.cloudsqlIdleInstanceRecommendations.list
-  - recommender.cloudsqlInstanceOutOfDiskRecommendations.get
-  - recommender.cloudsqlInstanceOutOfDiskRecommendations.list
-  - recommender.cloudsqlOverprovisionedInstanceRecommendations.get
-  - recommender.cloudsqlOverprovisionedInstanceRecommendations.list
-  - recommender.computeAddressIdleResourceInsights.get
-  - recommender.computeAddressIdleResourceInsights.list
-  - recommender.computeAddressIdleResourceRecommendations.get
-  - recommender.computeAddressIdleResourceRecommendations.list
-  - recommender.computeDiskIdleResourceInsights.get
-  - recommender.computeDiskIdleResourceInsights.list
-  - recommender.computeDiskIdleResourceRecommendations.get
-  - recommender.computeDiskIdleResourceRecommendations.list
-  - recommender.computeImageIdleResourceInsights.get
-  - recommender.computeImageIdleResourceInsights.list
-  - recommender.computeImageIdleResourceRecommendations.get
-  - recommender.computeImageIdleResourceRecommendations.list
-  - recommender.computeInstanceIdleResourceRecommendations.get
-  - recommender.computeInstanceIdleResourceRecommendations.list
-  - recommender.computeInstanceMachineTypeRecommendations.get
-  - recommender.computeInstanceMachineTypeRecommendations.list
-  - recommender.computeInstanceGroupManagerMachineTypeRecommendations.get
-  - recommender.computeInstanceGroupManagerMachineTypeRecommendations.list
-  - recommender.resourcemanagerProjectUtilizationRecommendations.get
-  - recommender.resourcemanagerProjectUtilizationRecommendations.list
-  - recommender.spendBasedCommitmentRecommendations.get
-  - recommender.spendBasedCommitmentRecommendations.list
-  - recommender.usageCommitmentRecommendations.get
-  - recommender.usageCommitmentRecommendations.list
-  - recommender.networkAnalyzerIpAddressInsights.get
-  - recommender.networkAnalyzerIpAddressInsights.list
-  - resourcemanager.projects.get
+  - bigquery.bireservations.get # BigQuery Visibility Feature
+  - bigquery.capacityCommitments.get # BigQuery Visibility Feature
+  - bigquery.capacityCommitments.list # BigQuery Visibility Feature
+  - bigquery.jobs.get # BigQuery Visibility Feature
+  - bigquery.jobs.list # BigQuery Visibility Feature
+  - bigquery.jobs.listAll # BigQuery Visibility Feature
+  - bigquery.reservationAssignments.list # BigQuery Visibility Feature
+  - bigquery.reservationAssignments.search # BigQuery Visibility Feature
+  - bigquery.reservations.get # BigQuery Visibility Feature
+  - bigquery.reservations.list # BigQuery Visibility Feature
+  - cloudasset.assets.exportResource # Find projects with a specific asset type (ex. CUD, Compute Instance, etc.)
+  - compute.commitments.list # GCE CUD Planning feature, CUD expiration alerts
+  - monitoring.timeSeries.list # Gather metrics, used in multiple features
+  - recommender.cloudsqlIdleInstanceRecommendations.get # [Future] Cloud SQL Idle Resource Recommendations
+  - recommender.cloudsqlIdleInstanceRecommendations.list # [Future] Cloud SQL Idle Resource Recommendations
+  - recommender.cloudsqlInstanceOutOfDiskRecommendations.get # [Future] Cloud SQL Disk Recommendations
+  - recommender.cloudsqlInstanceOutOfDiskRecommendations.list # [Future] Cloud SQL Disk Recommendations
+  - recommender.cloudsqlOverprovisionedInstanceRecommendations.get # [Future] Cloud SQL Rightsizing Recommendations
+  - recommender.cloudsqlOverprovisionedInstanceRecommendations.list # [Future] Cloud SQL Rightsizing Recommendations
+  - recommender.computeAddressIdleResourceInsights.get # [Future] Compute Engine Idle IP Address Recommendations
+  - recommender.computeAddressIdleResourceInsights.list # [Future] Compute Engine Idle IP Address Recommendations
+  - recommender.computeAddressIdleResourceRecommendations.get # [Future] Compute Engine Idle IP Address Recommendations
+  - recommender.computeAddressIdleResourceRecommendations.list # [Future] Compute Engine Idle IP Address Recommendations
+  - recommender.computeDiskIdleResourceInsights.get # Compute Engine Idle Disk Recommendations
+  - recommender.computeDiskIdleResourceInsights.list # Compute Engine Idle Disk Recommendations
+  - recommender.computeDiskIdleResourceRecommendations.get # Compute Engine Idle Disk Recommendations
+  - recommender.computeDiskIdleResourceRecommendations.list # Compute Engine Idle Disk Recommendations
+  - recommender.computeImageIdleResourceInsights.get # [Future] Compute Engine Unused Custom Image Recommendation
+  - recommender.computeImageIdleResourceInsights.list # [Future] Compute Engine Unused Custom Image Recommendation
+  - recommender.computeImageIdleResourceRecommendations.get # [Future] Compute Engine Unused Custom Image Recommendation
+  - recommender.computeImageIdleResourceRecommendations.list # [Future] Compute Engine Unused Custom Image Recommendation
+  - recommender.computeInstanceIdleResourceRecommendations.get # Compute Engine Idle Resource Recommendations
+  - recommender.computeInstanceIdleResourceRecommendations.list # Compute Engine Idle Resource Recommendations
+  - recommender.computeInstanceMachineTypeRecommendations.get # Compute Engine Instance Rightsizing Recommendations
+  - recommender.computeInstanceMachineTypeRecommendations.list # Compute Engine Instance Rightsizing Recommendations
+  - recommender.computeInstanceGroupManagerMachineTypeRecommendations.get # Compute Engine Instance Group Rightsizing Recommendations
+  - recommender.computeInstanceGroupManagerMachineTypeRecommendations.list # Compute Engine Instance Group Rightsizing Recommendations
+  - recommender.resourcemanagerProjectUtilizationRecommendations.get # [Future] Unattended Project Recommendations
+  - recommender.resourcemanagerProjectUtilizationRecommendations.list # [Future] Unattended Project Recommendations
+  - recommender.spendBasedCommitmentRecommendations.get # [Future] Spend Based Commitment Recommendations
+  - recommender.spendBasedCommitmentRecommendations.list # [Future] Spend Based Commitment Recommendations
+  - recommender.usageCommitmentRecommendations.get # [Future] Usage Based Commitment Recommendations
+  - recommender.usageCommitmentRecommendations.list # [Future] Usage Based Commitment Recommendations
+  - recommender.networkAnalyzerIpAddressInsights.get # Unused Static IP Address Recommendations
+  - recommender.networkAnalyzerIpAddressInsights.list # Unused Static IP Address Recommendations
+  - resourcemanager.projects.get # List Projects, used in multiple features
 name: organizations/{CHANGE-ME}/roles/TernaryCMPServiceAgent
 stage: GA
 title: Ternary CMP Service Agent
