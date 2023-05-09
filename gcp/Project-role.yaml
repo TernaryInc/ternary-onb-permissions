@@ -13,6 +13,10 @@ includedPermissions:
   - cloudasset.assets.exportResource # Find projects with a specific asset type (ex. CUD, Compute Instance, etc.)
   - compute.commitments.list # GCE CUD Planning feature, CUD expiration alerts
   - monitoring.timeSeries.list # Gather metrics, used in multiple features
+  - recommender.bigqueryCapacityCommitmentsRecommendations.get # [Future] BigQuery Slot Reservation Recommendations
+  - recommender.bigqueryCapacityCommitmentsRecommendations.list # [Future] BigQuery Slot Reservation Recommendations
+  - recommender.bigqueryCapacityCommitmentsInsights.get # [Future] BigQuery Slot Reservation Recommendations
+  - recommender.bigqueryCapacityCommitmentsInsights.list # [Future] BigQuery Slot Reservation Recommendations
   - recommender.cloudsqlIdleInstanceRecommendations.get # [Future] Cloud SQL Idle Resource Recommendations
   - recommender.cloudsqlIdleInstanceRecommendations.list # [Future] Cloud SQL Idle Resource Recommendations
   - recommender.cloudsqlInstanceOutOfDiskRecommendations.get # [Future] Cloud SQL Disk Recommendations
