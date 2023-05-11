@@ -62,8 +62,10 @@
                                         "ce:GetRightsizingRecommendation",
                                         "EC2:DescribeVolumes",
                                         "EC2:DescribeInstances",
+                                        "EC2:DescribeReservedInstances",
                                         "lambda:ListFunctions",
-                                        "lambda:ListProvisionedConcurrencyConfigs"
+                                        "lambda:ListProvisionedConcurrencyConfigs",
+                                        "savingsplans:DescribeSavingsPlans"
                                     ],
                                     "Resource": "*"
                                 },
