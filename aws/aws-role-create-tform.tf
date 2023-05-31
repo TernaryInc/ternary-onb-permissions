@@ -30,6 +30,7 @@ data "aws_iam_policy_document" "ternary_cmp_service_agent_permissions" {
       "compute-optimizer:GetAutoScalingGroupRecommendations",
       "compute-optimizer:GetEBSVolumeRecommendations",
       "compute-optimizer:GetLambdaFunctionRecommendations",
+      "rds:DescribeOrderableDBInstanceOptions",
       "rds:DescribeReservedDBInstancesOfferings",
       "ce:GetReservationPurchaseRecommendation",
       "ce:GetSavingsPlansPurchaseRecommendation",
