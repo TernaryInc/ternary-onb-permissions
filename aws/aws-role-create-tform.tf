@@ -35,12 +35,14 @@ data "aws_iam_policy_document" "ternary_cmp_service_agent_permissions" {
       "ce:GetReservationPurchaseRecommendation",
       "ce:GetSavingsPlansPurchaseRecommendation",
       "ce:GetRightsizingRecommendation",
+      "EC2:DescribeRegions",
       "EC2:DescribeVolumes",
       "EC2:DescribeInstances",
       "EC2:DescribeReservedInstances",
       "lambda:ListFunctions",
       "lambda:ListProvisionedConcurrencyConfigs",
-      "savingsplans:DescribeSavingsPlans"
+      "savingsplans:DescribeSavingsPlans",
+      "organizations:ListAccounts"
     ]
     resources = ["*"]
   }

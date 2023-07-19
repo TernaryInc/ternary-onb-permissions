@@ -61,12 +61,14 @@
                                         "ce:GetReservationPurchaseRecommendation",
                                         "ce:GetSavingsPlansPurchaseRecommendation",
                                         "ce:GetRightsizingRecommendation",
+                                        "EC2:DescribeRegions",
                                         "EC2:DescribeVolumes",
                                         "EC2:DescribeInstances",
                                         "EC2:DescribeReservedInstances",
                                         "lambda:ListFunctions",
                                         "lambda:ListProvisionedConcurrencyConfigs",
-                                        "savingsplans:DescribeSavingsPlans"
+                                        "savingsplans:DescribeSavingsPlans",
+                                        "organizations:ListAccounts"
                                     ],
                                     "Resource": "*"
                                 },
