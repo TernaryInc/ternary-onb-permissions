@@ -1,0 +1,104 @@
+{
+    "AWSTemplateFormatVersion": "2010-09-09",
+    "Resources": {
+        "TernaryCMPMonitoringAgentRole": {
+            "Type": "AWS::IAM::Role",
+            "Properties": {
+                "AssumeRolePolicyDocument": {
+                    "Version": "2012-10-17",
+                    "Statement": [
+                        {
+                            "Sid": "TernaryCMPMonitoringAgentAssumeRole",
+                            "Effect": "Allow",
+                            "Principal": {
+                                "Federated": "accounts.google.com"
+                            },
+                            "Action": "sts:AssumeRoleWithWebIdentity",
+                            "Condition": {
+                                "StringEquals": {
+                                    "accounts.google.com:aud": {
+                                        "Ref": "ServiceAccountUniqueIDParameter"
+                                    },
+                                    "accounts.google.com:oaud": {
+                                        "Ref": "ServiceAccountParameter"
+                                    },
+                                    "accounts.google.com:sub": {
+                                        "Ref": "ServiceAccountUniqueIDParameter"
+                                    }
+                                },
+                                "Null": {
+                                    "accounts.google.com:aud": "false",
+                                    "accounts.google.com:oaud": "false"
+                                }
+                            }
+                        }
+                    ]
+                },
+                "Description": "Permissions for Ternary to access your cloud for cost insights",
+                "Policies": [
+                    {
+                        "PolicyName": "TernaryCMPLinkedAccountAgentPolicy",
+                        "PolicyDocument": {
+                            "Version": "2012-10-17",
+                            "Statement": [
+                                {
+                                    "Sid": "AccountAccess",
+                                    "Effect": "Allow",
+                                    "Action": [
+                                        "cloudwatch:ListTagsForResource",
+                                        "cloudwatch:ListMetrics",
+                                        "cloudwatch:ListMetricStreams",
+                                        "cloudwatch:GetMetricStatistics",
+                                        "cloudwatch:GetMetricData",
+                                        "cloudwatch:GetMetricStatistics",
+                                        "dynamodb:DescribeTable",
+                                        "dynamodb:ListTables",
+                                        "ec2:DescribeImages",
+                                        "ec2:DescribeInstances",
+                                        "ec2:DescribeRegions",
+                                        "ec2:DescribeReservedInstances",
+                                        "ec2:DescribeReservedInstancesModifications",
+                                        "ec2:DescribeSnapshots",
+                                        "ec2:DescribeVolumes",
+                                        "ec2:GetReservedInstancesExchangeQuote",
+                                        "ecs:DescribeClusters",
+                                        "ecs:DescribeContainerInstances",
+                                        "ecs:ListClusters",
+                                        "ecs:ListContainerInstances",
+                                        "elasticache:DescribeCacheClusters",
+                                        "elasticache:DescribeReservedCacheNodes",
+                                        "elasticache:ListTagsForResource",
+                                        "elasticmapreduce:DescribeCluster",
+                                        "elasticmapreduce:ListClusters",
+                                        "elasticmapreduce:ListInstances",
+                                        "rds:DescribeDBClusters",
+                                        "rds:DescribeDBInstances",
+                                        "rds:DescribeReservedDBInstances",
+                                        "rds:ListTagsForResource",
+                                        "redshift:DescribeClusters",
+                                        "redshift:DescribeReservedNodes",
+                                        "redshift:DescribeTags",
+                                        "savingsplans:DescribeSavingsPlans",
+                                        "ce:GetSavingsPlansPurchaseRecommendation"
+                                    ],
+                                    "Resource": "*"
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "RoleName": "TernaryCMPLinkedAccountAgent"
+            }
+        }
+    },
+    "Parameters": {
+        "ServiceAccountParameter": {
+            "Type": "String",
+            "Description": "Ternary tenant Service Account email"
+        },
+        "ServiceAccountUniqueIDParameter": {
+            "Type": "String",
+            "Description": "Unique user id generated by Google."
+        }
+    }
+}
