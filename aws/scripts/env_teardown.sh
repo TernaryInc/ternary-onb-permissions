@@ -1,2 +1,0 @@
-deactivate
-rm -rf venv
