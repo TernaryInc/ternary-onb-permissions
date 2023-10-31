@@ -21,12 +21,12 @@ resource "google_organization_iam_custom_role" "ternary_service_agent" {
     "recommender.bigqueryCapacityCommitmentsRecommendations.list", # [Future] BigQuery Slot Reservation Recommendations
     "recommender.bigqueryCapacityCommitmentsInsights.get", # [Future] BigQuery Slot Reservation Recommendations
     "recommender.bigqueryCapacityCommitmentsInsights.list", # [Future] BigQuery Slot Reservation Recommendations
-    "recommender.cloudsqlIdleInstanceRecommendations.get", # [Future] Cloud SQL Idle Resource Recommendations
-    "recommender.cloudsqlIdleInstanceRecommendations.list", # [Future] Cloud SQL Idle Resource Recommendations
+    "recommender.cloudsqlIdleInstanceRecommendations.get", # Cloud SQL Idle Resource Recommendations
+    "recommender.cloudsqlIdleInstanceRecommendations.list", # Cloud SQL Idle Resource Recommendations
     "recommender.cloudsqlInstanceOutOfDiskRecommendations.get",  # [Future] Cloud SQL Disk Recommendations
     "recommender.cloudsqlInstanceOutOfDiskRecommendations.list",  # [Future] Cloud SQL Disk Recommendations
-    "recommender.cloudsqlOverprovisionedInstanceRecommendations.get", # [Future] Cloud SQL Rightsizing Recommendations
-    "recommender.cloudsqlOverprovisionedInstanceRecommendations.list", # [Future] Cloud SQL Rightsizing Recommendations
+    "recommender.cloudsqlOverprovisionedInstanceRecommendations.get", # Cloud SQL Rightsizing Recommendations
+    "recommender.cloudsqlOverprovisionedInstanceRecommendations.list", # Cloud SQL Rightsizing Recommendations
     "recommender.computeAddressIdleResourceInsights.get", # [Future] Compute Engine Idle IP Address Recommendations
     "recommender.computeAddressIdleResourceInsights.list", # [Future] Compute Engine Idle IP Address Recommendations
     "recommender.computeAddressIdleResourceRecommendations.get", # [Future] Compute Engine Idle IP Address Recommendations
