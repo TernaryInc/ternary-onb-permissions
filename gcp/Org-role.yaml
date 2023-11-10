@@ -10,19 +10,22 @@ includedPermissions:
   - bigquery.reservationAssignments.search # BigQuery Visibility Feature
   - bigquery.reservations.get # BigQuery Visibility Feature
   - bigquery.reservations.list # BigQuery Visibility Feature
+  - billing.resourceCosts.get # View project-scoped requirements reflecting custom contract pricing
   - cloudasset.assets.exportResource # Find projects with a specific asset type (ex. CUD, Compute Instance, etc.)
   - compute.commitments.list # GCE CUD Planning feature, CUD expiration alerts
   - monitoring.timeSeries.list # Gather metrics, used in multiple features
-  - recommender.bigqueryCapacityCommitmentsRecommendations.get # [Future] BigQuery Slot Reservation Recommendations
-  - recommender.bigqueryCapacityCommitmentsRecommendations.list # [Future] BigQuery Slot Reservation Recommendations
   - recommender.bigqueryCapacityCommitmentsInsights.get # [Future] BigQuery Slot Reservation Recommendations
   - recommender.bigqueryCapacityCommitmentsInsights.list # [Future] BigQuery Slot Reservation Recommendations
+  - recommender.bigqueryCapacityCommitmentsRecommendations.get # [Future] BigQuery Slot Reservation Recommendations
+  - recommender.bigqueryCapacityCommitmentsRecommendations.list # [Future] BigQuery Slot Reservation Recommendations
   - recommender.cloudsqlIdleInstanceRecommendations.get # Cloud SQL Idle Resource Recommendations
   - recommender.cloudsqlIdleInstanceRecommendations.list # Cloud SQL Idle Resource Recommendations
   - recommender.cloudsqlInstanceOutOfDiskRecommendations.get # [Future] Cloud SQL Disk Recommendations
   - recommender.cloudsqlInstanceOutOfDiskRecommendations.list # [Future] Cloud SQL Disk Recommendations
   - recommender.cloudsqlOverprovisionedInstanceRecommendations.get # Cloud SQL Rightsizing Recommendations
   - recommender.cloudsqlOverprovisionedInstanceRecommendations.list # Cloud SQL Rightsizing Recommendations
+  - recommender.commitmentUtilizationInsights.get # Usage Based Commitment Recommendations
+  - recommender.commitmentUtilizationInsights.list # Usage Based Commitment Recommendations
   - recommender.computeAddressIdleResourceInsights.get # [Future] Compute Engine Idle IP Address Recommendations
   - recommender.computeAddressIdleResourceInsights.list # [Future] Compute Engine Idle IP Address Recommendations
   - recommender.computeAddressIdleResourceRecommendations.get # [Future] Compute Engine Idle IP Address Recommendations
@@ -35,20 +38,22 @@ includedPermissions:
   - recommender.computeImageIdleResourceInsights.list # [Future] Compute Engine Unused Custom Image Recommendation
   - recommender.computeImageIdleResourceRecommendations.get # [Future] Compute Engine Unused Custom Image Recommendation
   - recommender.computeImageIdleResourceRecommendations.list # [Future] Compute Engine Unused Custom Image Recommendation
+  - recommender.computeInstanceGroupManagerMachineTypeRecommendations.get # Compute Engine Instance Group Rightsizing Recommendations
+  - recommender.computeInstanceGroupManagerMachineTypeRecommendations.list # Compute Engine Instance Group Rightsizing Recommendations
   - recommender.computeInstanceIdleResourceRecommendations.get # Compute Engine Idle Resource Recommendations
   - recommender.computeInstanceIdleResourceRecommendations.list # Compute Engine Idle Resource Recommendations
   - recommender.computeInstanceMachineTypeRecommendations.get # Compute Engine Instance Rightsizing Recommendations
   - recommender.computeInstanceMachineTypeRecommendations.list # Compute Engine Instance Rightsizing Recommendations
-  - recommender.computeInstanceGroupManagerMachineTypeRecommendations.get # Compute Engine Instance Group Rightsizing Recommendations
-  - recommender.computeInstanceGroupManagerMachineTypeRecommendations.list # Compute Engine Instance Group Rightsizing Recommendations
+  - recommender.networkAnalyzerIpAddressInsights.get # Unused Static IP Address Recommendations
+  - recommender.networkAnalyzerIpAddressInsights.list # Unused Static IP Address Recommendations
   - recommender.resourcemanagerProjectUtilizationRecommendations.get # [Future] Unattended Project Recommendations
   - recommender.resourcemanagerProjectUtilizationRecommendations.list # [Future] Unattended Project Recommendations
+  - recommender.spendBasedCommitmentInsights.get # Spend Based Commitment Recommendations
+  - recommender.spendBasedCommitmentInsights.list # Spend Based Commitment Recommendations
   - recommender.spendBasedCommitmentRecommendations.get # [Future] Spend Based Commitment Recommendations
   - recommender.spendBasedCommitmentRecommendations.list # [Future] Spend Based Commitment Recommendations
   - recommender.usageCommitmentRecommendations.get # [Future] Usage Based Commitment Recommendations
   - recommender.usageCommitmentRecommendations.list # [Future] Usage Based Commitment Recommendations
-  - recommender.networkAnalyzerIpAddressInsights.get # Unused Static IP Address Recommendations
-  - recommender.networkAnalyzerIpAddressInsights.list # Unused Static IP Address Recommendations
   - resourcemanager.folders.get # Allows Ternary to traverse GCP Organizations and find projects
   - resourcemanager.folders.list # Allows Ternary to traverse GCP Organizations and find projects
   - resourcemanager.organizations.get # Allows Ternary to traverse GCP Organizations and find projects
