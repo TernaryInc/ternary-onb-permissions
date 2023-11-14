@@ -70,17 +70,17 @@ data "aws_iam_policy_document" "ternary_cmp_linked_account_agent_assume_role" {
     condition {
       test     = "StringEquals"
       variable = "accounts.google.com:aud"
-      values   = local.ternary_service_account_uid
+      values   = [local.ternary_service_account_uid]
     }
     condition {
       test     = "StringEquals"
       variable = "accounts.google.com:oaud"
-      values   = local.ternary_service_account
+      values   = [local.ternary_service_account]
     }
     condition {
       test     = "StringEquals"
       variable = "accounts.google.com:sub"
-      values   = local.ternary_service_account_uid
+      values   = [local.ternary_service_account_uid]
     }
     condition {
       test     = "Null"
