@@ -52,6 +52,8 @@ resource "google_organization_iam_custom_role" "ternary_service_agent" {
     "recommender.networkAnalyzerIpAddressInsights.list", # Unused Static IP Address Recommendations
     "recommender.resourcemanagerProjectUtilizationRecommendations.get", # [Future] Unattended Project Recommendations
     "recommender.resourcemanagerProjectUtilizationRecommendations.list", # [Future] Unattended Project Recommendations
+    "recommender.runServiceCostRecommendations.get", # Cloud Run Cost Recommendations
+    "recommender.runServiceCostRecommendations.list", # Cloud Run Cost Recommendations
     "recommender.spendBasedCommitmentInsights.get", # Spend Based Commitment Recommendations
     "recommender.spendBasedCommitmentInsights.list", # Spend Based Commitment Recommendations
     "recommender.spendBasedCommitmentRecommendations.get", # Spend Based Commitment Recommendations
