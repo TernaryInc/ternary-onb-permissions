@@ -45,12 +45,13 @@
                                     "Sid": "AccountAccess",
                                     "Effect": "Allow",
                                     "Action": [
-                                        "cloudwatch:ListTagsForResource",
-                                        "cloudwatch:ListMetrics",
-                                        "cloudwatch:ListMetricStreams",
-                                        "cloudwatch:GetMetricStatistics",
+                                        "ce:GetSavingsPlansPurchaseRecommendation",
                                         "cloudwatch:GetMetricData",
                                         "cloudwatch:GetMetricStatistics",
+                                        "cloudwatch:GetMetricStatistics",
+                                        "cloudwatch:ListMetrics",
+                                        "cloudwatch:ListMetricStreams",
+                                        "cloudwatch:ListTagsForResource",
                                         "dynamodb:DescribeTable",
                                         "dynamodb:ListTables",
                                         "ec2:DescribeImages",
@@ -71,6 +72,8 @@
                                         "elasticmapreduce:DescribeCluster",
                                         "elasticmapreduce:ListClusters",
                                         "elasticmapreduce:ListInstances",
+                                        "es:DescribeReservedInstances",
+                                        "memorydb:DescribeReservedNodes",
                                         "rds:DescribeDBClusters",
                                         "rds:DescribeDBInstances",
                                         "rds:DescribeReservedDBInstances",
@@ -78,8 +81,7 @@
                                         "redshift:DescribeClusters",
                                         "redshift:DescribeReservedNodes",
                                         "redshift:DescribeTags",
-                                        "savingsplans:DescribeSavingsPlans",
-                                        "ce:GetSavingsPlansPurchaseRecommendation"
+                                        "savingsplans:DescribeSavingsPlans"
                                     ],
                                     "Resource": "*"
                                 }
