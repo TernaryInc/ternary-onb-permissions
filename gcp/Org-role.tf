@@ -14,6 +14,8 @@ resource "google_organization_iam_custom_role" "ternary_service_agent" {
     "bigquery.reservationAssignments.search", # BigQuery Visibility Feature
     "bigquery.reservations.get", # BigQuery Visibility Feature
     "bigquery.reservations.list", # BigQuery Visibility Feature
+    "bigquery.tables.get", # BigQuery Optimizations Feature
+    "bigquery.tables.list", # BigQuery Optimizations Feature
     "billing.resourceCosts.get", # View project-scoped requirements reflecting custom contract pricing
     "cloudasset.assets.exportResource", # Find projects with a specific asset type (ex. CUD, Compute Instance, etc.)
     "compute.commitments.list", # GCE CUD Planning feature, CUD expiration alerts
