@@ -31,3 +31,7 @@ provider "azurerm" {
   features {}
 }
 ```
+
+## Future work
+
+* Automatically backfill the created billing exports for the maximum account of time when the export is created for the first time.
