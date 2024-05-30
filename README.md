@@ -14,7 +14,9 @@ Permissions necessary to onboard AWS by creating the required role are outlined 
 
 ## Azure
 
-Ternary's public Azure pem file is located in [Azure pem](./azure/ca.pem).
+For your validating convenience, Ternary's public Azure pem file is located in [Azure pem](./azure/ca.pem).
+
+Use the terraform module in `azure/terraform` to automatically deploy Azure permissions to your Azure environment. You only need the client certificate PEM downloaded from your Admin page.
 
 # License
 
