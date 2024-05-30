@@ -1,5 +1,5 @@
 resource "azuread_application_registration" "ternary" {
-  display_name     = "Ternary2"
+  display_name     = "Ternary"
   description      = "Cloud cost management platform"
   sign_in_audience = "AzureADMyOrg"
   homepage_url     = "https://ternary.app"
