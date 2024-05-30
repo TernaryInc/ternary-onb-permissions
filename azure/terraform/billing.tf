@@ -1,3 +1,8 @@
+# TODO: Once https://github.com/hashicorp/terraform-provider-azurerm/issues/23747
+# is solved, add the partition data and dataset version fields. This will allow us to
+# export partitioned datasets for better ingestion, as well as open the possibility
+# to use azapi to backfill the historical data.
+
 resource "time_static" "creation" {}
 
 resource "azurerm_billing_account_cost_management_export" "actuals" {

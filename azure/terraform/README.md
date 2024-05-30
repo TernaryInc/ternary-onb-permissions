@@ -12,7 +12,7 @@ module "ternary" {
   billing_account_id      = "MY_MICROSOFT_BILLING_ACCOUNT_ID"
   client_certificate_path = "/path/to/your/Ternary_Azure.pem"
   enhanced_access_scopes = [
-  "/providers/Microsoft.Management/managementGroups/MY-ROOT-MANAGEMENT-GROUP-GUID"
+    "/providers/Microsoft.Management/managementGroups/MY-ROOT-MANAGEMENT-GROUP-GUID"
   ]
 }
 

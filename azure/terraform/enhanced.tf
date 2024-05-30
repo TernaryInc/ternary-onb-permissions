@@ -1,10 +1,25 @@
-resource "azurerm_role_assignment" "enhanced" {
-  for_each             = toset(["Advisor Reviews Reader", "Cost Management Reader", "Monitoring Reader"])
-  scope                = azurerm_storage_container.ternary.resource_manager_id
-  role_definition_name = each.key
+resource "azurerm_role_assignment" "advisor_reader" {
+  for_each             = toset(var.enhanced_access_scopes)
+  scope                = each.key
+  role_definition_name = "Advisor Reviews Reader"
   principal_id         = azuread_service_principal.ternary.id
   principal_type       = "ServicePrincipal"
+}
 
+resource "azurerm_role_assignment" "monitoring_reader" {
+  for_each             = toset(var.enhanced_access_scopes)
+  scope                = each.key
+  role_definition_name = "Monitoring Reader"
+  principal_id         = azuread_service_principal.ternary.id
+  principal_type       = "ServicePrincipal"
+}
+
+resource "azurerm_role_assignment" "cost_management_reader" {
+  for_each             = toset(var.enhanced_access_scopes)
+  scope                = each.key
+  role_definition_name = "Cost Management Reader"
+  principal_id         = azuread_service_principal.ternary.id
+  principal_type       = "ServicePrincipal"
 }
 
 # azurerm is not capable of this granting the App access to the billing account
