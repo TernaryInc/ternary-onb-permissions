@@ -1,5 +1,5 @@
 locals {
-  ternary_service_account = "<INSERT_SERVICE_ACCOUNT>"
+  ternary_service_account     = "<INSERT_SERVICE_ACCOUNT>"
   ternary_service_account_uid = "<INSERT_SERVICE_ACCOUNT_UID>"
 }
 resource "aws_iam_role" "ternary_cmp_linked_account_agent" {
@@ -18,12 +18,13 @@ data "aws_iam_policy_document" "ternary_cmp_linked_account_agent_permissions" {
     sid    = "AccountAccess"
     effect = "Allow"
     actions = [
-      "cloudwatch:ListTagsForResource",
-      "cloudwatch:ListMetrics",
-      "cloudwatch:ListMetricStreams",
-      "cloudwatch:GetMetricStatistics",
+      "ce:GetSavingsPlansPurchaseRecommendation",
       "cloudwatch:GetMetricData",
       "cloudwatch:GetMetricStatistics",
+      "cloudwatch:GetMetricStatistics",
+      "cloudwatch:ListMetrics",
+      "cloudwatch:ListMetricStreams",
+      "cloudwatch:ListTagsForResource",
       "dynamodb:DescribeTable",
       "dynamodb:ListTables",
       "ec2:DescribeImages",
@@ -44,6 +45,8 @@ data "aws_iam_policy_document" "ternary_cmp_linked_account_agent_permissions" {
       "elasticmapreduce:DescribeCluster",
       "elasticmapreduce:ListClusters",
       "elasticmapreduce:ListInstances",
+      "es:DescribeReservedInstances",
+      "memorydb:DescribeReservedNodes",
       "rds:DescribeDBClusters",
       "rds:DescribeDBInstances",
       "rds:DescribeReservedDBInstances",
@@ -51,8 +54,7 @@ data "aws_iam_policy_document" "ternary_cmp_linked_account_agent_permissions" {
       "redshift:DescribeClusters",
       "redshift:DescribeReservedNodes",
       "redshift:DescribeTags",
-      "savingsplans:DescribeSavingsPlans",
-      "ce:GetSavingsPlansPurchaseRecommendation"
+      "savingsplans:DescribeSavingsPlans"
     ]
     resources = ["*"]
   }
