@@ -1,6 +1,6 @@
 locals {
-  ternary_bucket_id   = "<INSERT_S3_BUCKET_NAME>"
-  ternary_service_account = "<INSERT_SERVICE_ACCOUNT>"
+  ternary_bucket_id           = "<INSERT_S3_BUCKET_NAME>"
+  ternary_service_account     = "<INSERT_SERVICE_ACCOUNT>"
   ternary_service_account_uid = "<INSERT_SERVICE_ACCOUNT_UID>"
 }
 
@@ -22,30 +22,34 @@ data "aws_iam_policy_document" "ternary_cmp_service_agent_permissions" {
     sid    = "AccountAccess"
     effect = "Allow"
     actions = [
-      "s3:ListAllMyBuckets",
-      "s3:GetLifecycleConfiguration",
+      "ce:GetReservationPurchaseRecommendation",
+      "ce:GetRightsizingRecommendation",
+      "ce:GetSavingsPlansPurchaseRecommendation",
       "cloudwatch:GetMetricData",
-      "cloudwatch:ListMetricStreams",
-      "cloudwatch:ListTagsForResource",
       "cloudwatch:GetMetricStatistics",
       "cloudwatch:ListMetrics",
-      "compute-optimizer:GetEC2InstanceRecommendations",
+      "cloudwatch:ListMetricStreams",
+      "cloudwatch:ListTagsForResource",
       "compute-optimizer:GetAutoScalingGroupRecommendations",
       "compute-optimizer:GetEBSVolumeRecommendations",
+      "compute-optimizer:GetEC2InstanceRecommendations",
       "compute-optimizer:GetLambdaFunctionRecommendations",
-      "rds:DescribeOrderableDBInstanceOptions",
-      "rds:DescribeReservedDBInstancesOfferings",
-      "ce:GetReservationPurchaseRecommendation",
-      "ce:GetSavingsPlansPurchaseRecommendation",
-      "ce:GetRightsizingRecommendation",
-      "EC2:DescribeRegions",
-      "EC2:DescribeVolumes",
       "EC2:DescribeInstances",
+      "EC2:DescribeRegions",
       "EC2:DescribeReservedInstances",
+      "EC2:DescribeVolumes",
+      "elasticache:DescribeReservedCacheNodes",
+      "es:DescribeReservedInstances",
       "lambda:ListFunctions",
       "lambda:ListProvisionedConcurrencyConfigs",
-      "savingsplans:DescribeSavingsPlans",
-      "organizations:ListAccounts"
+      "memorydb:DescribeReservedNodes",
+      "organizations:ListAccounts",
+      "rds:DescribeOrderableDBInstanceOptions",
+      "rds:DescribeReservedDBInstancesOfferings",
+      "redshift:DescribeReservedNodes",
+      "s3:GetLifecycleConfiguration",
+      "s3:ListAllMyBuckets",
+      "savingsplans:DescribeSavingsPlans"
     ]
     resources = ["*"]
   }
