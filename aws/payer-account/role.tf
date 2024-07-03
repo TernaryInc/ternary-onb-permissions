@@ -1,9 +1,3 @@
-locals {
-  ternary_bucket_id           = "<INSERT_S3_BUCKET_NAME>"
-  ternary_service_account     = "<INSERT_SERVICE_ACCOUNT>"
-  ternary_service_account_uid = "<INSERT_SERVICE_ACCOUNT_UID>"
-}
-
 resource "aws_iam_role" "ternary_cmp_service_agent" {
   name               = "TernaryCMPServiceAgent"
   description        = "Permissions for Ternary to access your cloud for cost insights."
@@ -65,8 +59,8 @@ data "aws_iam_policy_document" "ternary_cmp_service_agent_permissions" {
       "s3:GetBucketLocation"
     ]
     resources = [
-      "arn:aws:s3:::${local.ternary_bucket_id}/*",
-      "arn:aws:s3:::${local.ternary_bucket_id}"
+      "arn:aws:s3:::${var.ternary_bucket_id}/*",
+      "arn:aws:s3:::${var.ternary_bucket_id}"
     ]
   }
 }
@@ -84,17 +78,17 @@ data "aws_iam_policy_document" "ternary_cmp_service_agent_assume_role" {
     condition {
       test     = "StringEquals"
       variable = "accounts.google.com:aud"
-      values   = [local.ternary_service_account_uid]
+      values   = [var.ternary_service_account_uid]
     }
     condition {
       test     = "StringEquals"
       variable = "accounts.google.com:oaud"
-      values   = [local.ternary_service_account]
+      values   = [var.ternary_service_account_email]
     }
     condition {
       test     = "StringEquals"
       variable = "accounts.google.com:sub"
-      values   = [local.ternary_service_account_uid]
+      values   = [var.ternary_service_account_uid]
     }
     condition {
       test     = "Null"
