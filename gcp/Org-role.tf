@@ -24,6 +24,8 @@ resource "google_organization_iam_custom_role" "ternary_service_agent" {
     "recommender.bigqueryCapacityCommitmentsInsights.list", # [Future] BigQuery Slot Reservation Recommendations
     "recommender.bigqueryCapacityCommitmentsRecommendations.get", # [Future] BigQuery Slot Reservation Recommendations
     "recommender.bigqueryCapacityCommitmentsRecommendations.list", # [Future] BigQuery Slot Reservation Recommendations
+    "recommender.bigqueryPartitionClusterRecommendations.get", # BigQuery Table Recommendations
+    "recommender.bigqueryPartitionClusterRecommendations.list", # BigQuery Table Recommendations
     "recommender.cloudsqlIdleInstanceRecommendations.get", # Cloud SQL Idle Resource Recommendations
     "recommender.cloudsqlIdleInstanceRecommendations.list", # Cloud SQL Idle Resource Recommendations
     "recommender.cloudsqlInstanceOutOfDiskRecommendations.get",  # [Future] Cloud SQL Disk Recommendations
