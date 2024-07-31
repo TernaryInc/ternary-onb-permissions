@@ -19,7 +19,7 @@ use for the value.
 
 ```hcl
 module "ternary-payer-account" {
-    source = "https://github.com/TernaryInc/ternary-onb-permissions.git//aws/payer-account?ref=master"
+    source = "git::https://github.com/TernaryInc/ternary-onb-permissions.git//aws/payer-account?ref=master"
 
     ternary_bucket_id             = "my-awesome-cur-bucket-001"
     ternary_service_account_email = "tenant-feedbaba@ternary-prod-cacc.iam.gserviceaccount.com"

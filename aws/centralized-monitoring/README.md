@@ -21,7 +21,7 @@ the `payer-account` module.
 
 ```hcl
 module "ternary-centralized-monitoring" {
-    source = "https://github.com/TernaryInc/ternary-onb-permissions.git//aws/centralized-monitoring?ref=master"
+    source = "git::https://github.com/TernaryInc/ternary-onb-permissions.git//aws/centralized-monitoring?ref=master"
 
     ternary_service_account_email = "tenant-feedbaba@ternary-prod-cacc.iam.gserviceaccount.com"
     ternary_service_account_uid   = "5555666667777"

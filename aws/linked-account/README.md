@@ -23,7 +23,7 @@ To obtain the values for `ternary_service_account_email` and
 
 ```hcl
 module "ternary-linked-account" {
-    source = "https://github.com/TernaryInc/ternary-onb-permissions.git//aws/linked-account?ref=master"
+    source = "git::https://github.com/TernaryInc/ternary-onb-permissions.git//aws/linked-account?ref=master"
 
     ternary_service_account_email = "tenant-feedbaba@ternary-prod-cacc.iam.gserviceaccount.com"
     ternary_service_account_uid   = "5555666667777"
