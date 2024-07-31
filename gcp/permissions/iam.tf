@@ -9,9 +9,10 @@ resource "google_organization_iam_member" "ternary" {
 }
 
 resource "google_bigquery_dataset_iam_member" "ternary" {
-  project_id = var.billing_export_project_id
+  project    = var.billing_export_project_id
   dataset_id = var.billing_export_dataset
   role       = "roles/bigquery.dataViewer"
+  member     = "serviceAccount:${var.ternary_service_account_email}"
 }
 
 resource "google_billing_account_iam_member" "ternary" {
