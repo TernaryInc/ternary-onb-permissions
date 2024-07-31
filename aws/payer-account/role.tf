@@ -1,11 +1,11 @@
 resource "aws_iam_role" "ternary_cmp_service_agent" {
-  name               = "TernaryCMPServiceAgent"
+  name               = var.ternary_role_name
   description        = "Permissions for Ternary to access your cloud for cost insights."
   assume_role_policy = data.aws_iam_policy_document.ternary_cmp_service_agent_assume_role.json
 }
 
 resource "aws_iam_role_policy" "ternary_cmp_service_agent" {
-  name   = "TernaryCMPServiceAgent"
+  name   = var.ternary_role_name
   role   = aws_iam_role.ternary_cmp_service_agent.name
   policy = data.aws_iam_policy_document.ternary_cmp_service_agent_permissions.json
 }

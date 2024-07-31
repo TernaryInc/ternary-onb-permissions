@@ -16,3 +16,9 @@ variable "ternary_bucket_id" {
   type        = string
   description = "S3 bucket name to which your AWS CUR is being written"
 }
+
+variable "ternary_role_name" {
+  type        = string
+  description = "Role name to create in your AWS account. Useful if you will run this twice in the same account."
+  default     = "TernaryCMPServiceAgent"
+}
