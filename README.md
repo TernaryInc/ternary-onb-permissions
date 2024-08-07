@@ -4,23 +4,33 @@ In this repo, Ternary enumerates the list of permissions that are required to on
 
 ## GCP
 
-In order to give permissions to the Ternary service account you were provided in initial onboarding steps, you'll need to download the appropriate YAML based on your choice to onboard a single project or an entire organization: [Project Custom Role][project custom role yaml] or [Organization Custom Role][org custom role yaml] respectively.
-
-You can download the [Project Custom Role][project custom role tf] and [Organization Custom Role][org custom role tf] in Terraform format for your convenience. As Terraform projects vary widely, we do not provide official steps for how to integrate this into your Terraform workspace and leave this step to the reader.
+Use the terraform module in `gcp/permissions` to automatically deploy Ternary
+permissions into your Google Cloud environment. You'll need the service account
+email and the billing export information. If you'd like us to help you create a
+billing export, there's an accompanying module, `gcp/billing-export` that you
+can use. For a recipe that combines both modules, check out the [GCP README.md](./gcp/README.md).
 
 ## AWS
 
-Permissions necessary to onboard AWS by creating the required role are outlined in [Terraform](./aws/aws-role-create-tform.tf) and [Cloud Formation](./aws/aws-role-create-cfn.json).
+Use the terraform module in `aws/payer-account` to automatically deploy Ternary
+permissions into your AWS environment. You'll need the service account email
+and service account UID.
+
+Check out the [AWS README.md](./aws/README.md) for more information on other
+modules we provide.
 
 ## Azure
 
-For your validating convenience, Ternary's public Azure pem file is located in [Azure pem](./azure/ca.pem).
+For your validating convenience, Ternary's public Azure pem file is located in
+[Azure pem](./azure/ca.pem).
 
-Use the terraform module in `azure/terraform` to automatically deploy Azure permissions to your Azure environment. You only need the client certificate PEM downloaded from your Admin page.
+Use the terraform module in `azure/terraform` to automatically deploy Azure
+permissions to your Azure environment. You only need the client certificate PEM
+downloaded from your Admin page.
 
 # License
 
-       Copyright 2023 Ternary, Inc.
+       Copyright 2024 Ternary, Inc.
 
        Licensed under the Apache License, Version 2.0 (the "License");
        you may not use this file except in compliance with the License.
@@ -33,8 +43,3 @@ Use the terraform module in `azure/terraform` to automatically deploy Azure perm
        WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
        See the License for the specific language governing permissions and
        limitations under the License.
-
-[project custom role yaml]: ./gcp/Project-role.yaml
-[org custom role yaml]: ./gcp/Org-role.yaml
-[project custom role tf]: ./gcp/Project-role.tf
-[org custom role tf]: ./gcp/Org-role.tf
