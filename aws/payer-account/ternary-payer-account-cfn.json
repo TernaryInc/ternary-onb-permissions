@@ -68,6 +68,7 @@
                                         "memorydb:DescribeReservedNodes",
                                         "organizations:ListAccounts",
                                         "rds:DescribeOrderableDBInstanceOptions",
+                                        "rds:DescribeReservedDBInstances",
                                         "rds:DescribeReservedDBInstancesOfferings",
                                         "redshift:DescribeReservedNodes",
                                         "s3:GetLifecycleConfiguration",
