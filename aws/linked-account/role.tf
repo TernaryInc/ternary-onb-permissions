@@ -3,12 +3,12 @@ locals {
   ternary_service_account_uid = "<INSERT_SERVICE_ACCOUNT_UID>"
 }
 resource "aws_iam_role" "ternary_cmp_linked_account_agent" {
-  name               = "ternary-cmp-linked-account-agent"
+  name               = "TernaryCMPLinkedAccountAgent"
   description        = "Permissions for Ternary to access your cloud for cost insights."
   assume_role_policy = data.aws_iam_policy_document.ternary_cmp_linked_account_agent_assume_role.json
 }
 resource "aws_iam_role_policy" "ternary_cmp_linked_account_agent" {
-  name   = "ternary-cmp-linked-account-agent"
+  name   = "TernaryCMPLinkedAccountAgent"
   role   = aws_iam_role.ternary_cmp_linked_account_agent.name
   policy = data.aws_iam_policy_document.ternary_cmp_linked_account_agent_permissions.json
 }
