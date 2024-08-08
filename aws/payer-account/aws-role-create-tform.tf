@@ -41,6 +41,7 @@ data "aws_iam_policy_document" "ternary_cmp_service_agent_permissions" {
       "lambda:ListProvisionedConcurrencyConfigs",
       "memorydb:DescribeReservedNodes",
       "organizations:ListAccounts",
+      "rds:DescribeReservedDBInstances",
       "rds:DescribeOrderableDBInstanceOptions",
       "rds:DescribeReservedDBInstancesOfferings",
       "redshift:DescribeReservedNodes",
