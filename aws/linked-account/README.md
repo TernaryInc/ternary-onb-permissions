@@ -1,9 +1,5 @@
 # linked-account
 
-**WARNING: This deployment method is being sunset and is not officially
-supported for new deploys. Unless you've been sent here by our Success
-Team, we strongly recommend using [aws-centralized-monitoring] instead.**
-
 This is simultaneously a Terraform module as well as a repository housing an
 equivalent CloudFormation template, `ternary-linked-account-cfn.json`.
 Uploading a CloudFormation template to the AWS console is an exercise left to

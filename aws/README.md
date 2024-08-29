@@ -9,7 +9,9 @@ Ternary. Generally speaking, Ternary will:
 
 There are 3 different modules in this directory; all of them are provided in
 both CloudFormation and Terraform format. Each role allows Ternary to access
-different parts of your AWS environment.
+different parts of your AWS environment. For an AWS Organization with multiple
+member accounts, a fully featured AWS integration will typicaly use all three
+modules.
 
 ## payer-account
 
@@ -38,11 +40,9 @@ metrics.
 
 ## linked-account
 
-**DEPRECATED: Please use `centralized-monitoring` instead.**
-
 The linked-account directory houses the code necessary to create the
 `TernaryCMPLinkedAccountAgent` role. This role is meant for any Linked Account
 with resources that you would like Ternary to be made aware of (Reserved
-Instances, Savings Plans, etc.)
+Instances, Savings Plans, etc.), and should be created in each Linked Account.
 
 [aws-centralized-monitoring]: https://github.com/TernaryInc/aws-centralized-monitoring
