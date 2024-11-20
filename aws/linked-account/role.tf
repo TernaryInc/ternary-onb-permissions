@@ -18,9 +18,10 @@ data "aws_iam_policy_document" "ternary_cmp_linked_account_agent_permissions" {
     sid    = "AccountAccess"
     effect = "Allow"
     actions = [
+      "ce:GetReservationPurchaseRecommendation",
+      "ce:GetRightsizingRecommendation",
       "ce:GetSavingsPlansPurchaseRecommendation",
       "cloudwatch:GetMetricData",
-      "cloudwatch:GetMetricStatistics",
       "cloudwatch:GetMetricStatistics",
       "cloudwatch:ListMetrics",
       "cloudwatch:ListMetricStreams",
@@ -50,14 +51,21 @@ data "aws_iam_policy_document" "ternary_cmp_linked_account_agent_permissions" {
       "elasticmapreduce:ListClusters",
       "elasticmapreduce:ListInstances",
       "es:DescribeReservedInstances",
+      "lambda:ListFunctions",
+      "lambda:ListProvisionedConcurrencyConfigs",
       "memorydb:DescribeReservedNodes",
+      "organizations:ListAccounts",
       "rds:DescribeDBClusters",
       "rds:DescribeDBInstances",
+      "rds:DescribeOrderableDBInstanceOptions",
       "rds:DescribeReservedDBInstances",
+      "rds:DescribeReservedDBInstancesOfferings",
       "rds:ListTagsForResource",
       "redshift:DescribeClusters",
       "redshift:DescribeReservedNodes",
       "redshift:DescribeTags",
+      "s3:GetLifecycleConfiguration",
+      "s3:ListAllMyBuckets",
       "savingsplans:DescribeSavingsPlans"
     ]
     resources = ["*"]
