@@ -10,7 +10,7 @@ Ternary. Generally speaking, Ternary will:
 There are 3 different modules in this directory; all of them are provided in
 both CloudFormation and Terraform format. Each role allows Ternary to access
 different parts of your AWS environment. For an AWS Organization with multiple
-member accounts, a fully featured AWS integration will typicaly use all three
+member accounts, a fully featured AWS integration will typically use all three
 modules.
 
 ## payer-account
