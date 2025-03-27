@@ -10,4 +10,4 @@ variable "ternary_service_account_uid" {
     condition     = length(regexall("[0-9]+", var.ternary_service_account_uid)) > 0
     error_message = "The ternary_service_account_uid value must be numeric."
   }
-}}
+}

@@ -28,9 +28,9 @@ Use the terraform module in `azure/terraform` to automatically deploy Azure
 permissions to your Azure environment. You only need the client certificate PEM
 downloaded from your Admin page.
 
-# License
+## License
 
-       Copyright 2024 Ternary, Inc.
+       Copyright 2025 Ternary, Inc.
 
        Licensed under the Apache License, Version 2.0 (the "License");
        you may not use this file except in compliance with the License.

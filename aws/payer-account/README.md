@@ -1,28 +1,20 @@
-# payer-account
+# Payer Account Module
 
-This is simultaneously a Terraform module as well as a repository housing an
-equivalent CloudFormation template, `ternary-payer-account-cfn.json`. Uploading
-a CloudFormation template to the AWS console is an exercise left to the reader,
-but see below for an example invocation of this module in Terraform.
+This module provides two deployment options:
 
-Either approach will create a `TernaryCMPServiceAgent` role whose ARN you
-should copy and paste into the `Role ARN` field inside Ternary.
+1. A Terraform module
+2. A CloudFormation template (`ternary-payer-account-cfn.json`)
 
-To obtain the values for `ternary_service_account_email` and
-`ternary_service_account_uid`, look at your Ternary Admin page.
+## Prerequisites
 
-To obtain the value for `ternary_bucket_id`, follow the instructions to
-set up an AWS CUR export to an S3 bucket. This bucket ID is what you should
-use for the value.
+- `ternary_service_account_email` and `ternary_service_account_uid` from your Ternary Admin page
+- `ternary_bucket_id` from your AWS CUR export S3 bucket setup
 
-## Example terraform usage
+## Usage
 
-```hcl
-module "ternary-payer-account" {
-    source = "git::https://github.com/TernaryInc/ternary-onb-permissions.git//aws/payer-account?ref=master"
+- For Terraform usage, see [this example](../../examples/aws_payer-monitoring.tf)
+- For CloudFormation, upload the template through the AWS console
 
-    ternary_bucket_id             = "my-awesome-cur-bucket-001"
-    ternary_service_account_email = "tenant-feedbaba@ternary-prod-cacc.iam.gserviceaccount.com"
-    ternary_service_account_uid   = "5555666667777"
-}
-```
+## Output
+
+Both deployment methods create a `TernaryCMPServiceAgent` role. Copy this role's ARN into the "Role ARN" field in your Ternary configuration.
