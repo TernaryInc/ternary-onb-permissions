@@ -1,24 +1,29 @@
-# permissions
+# GCP Permissions Module
 
-Terraform module for granting permissions to Ternary's service account for both your billing export, billing account, and API access.
+This module provides two deployment options:
 
-Example usage:
+1. A Terraform module
+2. A YAML configuration file (`role.yaml`)
 
-```hcl
-module "ternary-google" {
-    source = "git::https://github.com/TernaryInc/ternary-onb-permissions.git//gcp/permissions?ref=master"
+## Prerequisites
 
-    google_cloud_org_domain = "yourcompany.com"
-    ternary_service_account_email = "tenant-aaabbb111333@ternary-prod-cacc.iam.gserviceaccount.com"
+Before using this module, you need to set up a billing export in Google Cloud Console:
 
-    billing_export_project = "billing-export-334455"
-    billing_export_dataset = "my-export-dataset"
-    billing_account_id     = "AABBCC-123456-7890AB"
-}
-```
+1. Follow these [instructions] to create your billing export
+2. Note the project and dataset where you configured the export
+3. Ensure both detailed and standard billing exports are sent to the same location
 
-## I don't have a billing export yet
+## Usage
 
-Please create the billing export following these [instructions] in the Google Cloud Console. Note the project and dataset you send the billing export to. Please make sure to send both the detailed and standard billing exports to the same location.
+- For Terraform usage, see [this example](../../examples/gcp.tf)
+- For YAML configuration, apply the `role.yaml` file using the Google Cloud Console
+
+## Output
+
+This module creates the necessary IAM permissions for Ternary's service account to access:
+
+- Your billing export
+- Billing account information
+- Required API endpoints
 
 [instructions]: https://cloud.google.com/billing/docs/how-to/export-data-bigquery-setup

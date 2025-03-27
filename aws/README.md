@@ -1,48 +1,40 @@
 # Onboard AWS to Ternary
 
-The scripts within this directory help you to onboard your AWS accounts into
-Ternary. Generally speaking, Ternary will:
+This directory contains the necessary scripts to onboard your AWS accounts into Ternary. These scripts enable Ternary to:
 
-* Access S3 in order to read your Cost and Usage Export.
-* Access CloudWatch in order to download usage metrics in real-time.
-* Access other service APIs in order to get information about rate and usage optimization.
+* Access S3 to read your Cost and Usage Export
+* Access CloudWatch to download real-time usage metrics
+* Access other service APIs to gather rate and usage optimization information
 
-There are 3 different modules in this directory; all of them are provided in
-both CloudFormation and Terraform format. Each role allows Ternary to access
-different parts of your AWS environment. For an AWS Organization with multiple
-member accounts, a fully featured AWS integration will typically use all three
-modules.
+## Available Modules
 
-## payer-account
+The following modules are available in both CloudFormation and Terraform formats. For a fully featured AWS integration with multiple member accounts, you'll typically use all three modules:
 
-*THIS ROLE IS REQUIRED TO ONBOARD AN AWS CLOUD TO TERNARY.*
+### 1. Payer Account Module (Required)
 
-The payer-account directory houses the code necessary to create the
-`TernaryCMPServiceAgent` role. This role MUST be created in the AWS account
-your Cost and Usage Report (CUR) is generated in. This role allows Ternary to
-ingest your Cost and Usage Report, as well as listing any commitments you have
-centrally purchased and gather recommendations.
+Located in the `payer-account` directory, this creates the `TernaryCMPServiceAgent` role. This role:
 
-## centralized-monitoring
+* Must be created in the AWS account where your Cost and Usage Report (CUR) is generated
+* Enables Ternary to:
+  * Ingest your Cost and Usage Report
+  * List centrally purchased commitments
+  * Gather recommendations
 
-The centralized-monitoring directory houses the code necessary to create the
-`TernaryCMPMonitoringAgent` role. This role is meant to be configured in either
-an AWS management account or an AWS account dedicated to centralized CloudWatch
-Monitoring. AWS Centralized Monitoring allows Ternary to gather AWS Metrics of
-interest from across your whole AWS organization while only needing to connect
-to one account, instead of each account individually.
+### 2. Centralized Monitoring Module
 
-This role is designed to be used in conjunction with the
-[aws-centralized-monitoring] repository. By running the scripts in that
-repository to transfer metrics from all your linked accounts to the centralized
-monitoring account, Ternary will use this role to then access the aggregated
-metrics.
+Located in the `centralized-monitoring` directory, this creates the `TernaryCMPMonitoringAgent` role. This role:
 
-## linked-account
+* Should be configured in either:
+  * An AWS management account
+  * An AWS account dedicated to centralized CloudWatch Monitoring
+* Enables Ternary to gather AWS metrics across your entire organization from a single account
+* Works in conjunction with the [aws-centralized-monitoring] repository to access aggregated metrics
 
-The linked-account directory houses the code necessary to create the
-`TernaryCMPLinkedAccountAgent` role. This role is meant for any Linked Account
-with resources that you would like Ternary to be made aware of (Reserved
-Instances, Savings Plans, etc.), and should be created in each Linked Account.
+### 3. Linked Account Module
+
+Located in the `linked-account` directory, this creates the `TernaryCMPLinkedAccountAgent` role. This role:
+
+* Should be created in each Linked Account containing resources you want Ternary to monitor
+* Enables monitoring of resources like Reserved Instances and Savings Plans
 
 [aws-centralized-monitoring]: https://github.com/TernaryInc/aws-centralized-monitoring

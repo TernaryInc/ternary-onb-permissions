@@ -1,29 +1,25 @@
-# linked-account
+# Linked Account Module
 
-This is simultaneously a Terraform module as well as a repository housing an
-equivalent CloudFormation template, `ternary-linked-account-cfn.json`.
-Uploading a CloudFormation template to the AWS console is an exercise left to
-the reader, but see below for an example invocation of this module in
-Terraform.
+This module provides two deployment options:
 
-Either approach will create a `TernaryCMPLinkedAccountAgent` role in a linked
-AWS account from which you would like to gather metrics.
+1. A Terraform module
+2. A CloudFormation template (`ternary-linked-account-cfn.json`)
 
-These steps must be repeated for all linked accounts you wish to connect to
-Ternary, then you must all role ARNsto your Success Team.
+## Prerequisites
 
-To obtain the values for `ternary_service_account_email` and
-`ternary_service_account_uid`, look at your Ternary Admin page.
+- `ternary_service_account_email` and `ternary_service_account_uid` from your Ternary Admin page
 
-## Example terraform usage
+## Usage
 
-```hcl
-module "ternary-linked-account" {
-    source = "git::https://github.com/TernaryInc/ternary-onb-permissions.git//aws/linked-account?ref=master"
+- For Terraform usage, see [this example](../../examples/aws_linked-account.tf)
+- For CloudFormation, upload the template through the AWS console
 
-    ternary_service_account_email = "tenant-feedbaba@ternary-prod-cacc.iam.gserviceaccount.com"
-    ternary_service_account_uid   = "5555666667777"
-}
-```
+## Important Notes
 
-[aws-centralized-monitoring]: https://github.com/TernaryInc/aws-centralized-monitoring
+1. This module creates a `TernaryCMPLinkedAccountAgent` role in each linked AWS account where you want to gather metrics
+2. You must repeat these steps for all linked accounts you wish to connect to Ternary
+3. After deployment, provide all role ARNs to your Success Team
+
+## Related Resources
+
+- [aws-centralized-monitoring]: Repository for centralized AWS monitoring setup
