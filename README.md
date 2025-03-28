@@ -8,7 +8,7 @@ Use the terraform module in `gcp/permissions` to automatically deploy Ternary
 permissions into your Google Cloud environment. You'll need the service account
 email and the billing export information. If you'd like us to help you create a
 billing export, there's an accompanying module, `gcp/billing-export` that you
-can use. For a recipe that combines both modules, check out the [GCP README.md](./gcp/README.md).
+can use. For a recipe that combines both modules, check out the [GCP Permissions README.md](./gcp/permissions/README.md).
 
 ## AWS
 
