@@ -1,0 +1,32 @@
+name: Upload to S3
+
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch: # allows manual triggering
+
+jobs:
+  upload:
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::${{ vars.AWS_ACCOUNT_ID }}:role/github-actions-s3-uploader
+          aws-region: us-east-1
+
+      - name: Upload files to S3
+        run: |
+          # Create cloudformation directory if it doesn't exist
+          mkdir -p cloudformation
+          # Copy the specific file to the cloudformation directory
+          cp ternary-onb-permissions/aws/centralized-monitoring/ternary-monitoring-cfn.json cloudformation/
+          # Upload only the cloudformation directory
+          aws s3 sync ./cloudformation s3://ternary-onboarding-templates/cloudformation/ --delete
