@@ -27,6 +27,6 @@ jobs:
           # Create cloudformation directory if it doesn't exist
           mkdir -p cloudformation
           # Copy the specific file to the cloudformation directory
-          cp ternary-onb-permissions/aws/centralized-monitoring/ternary-monitoring-cfn.json cloudformation/
+          cp aws/centralized-monitoring/ternary-monitoring-cfn.json cloudformation/
           # Upload only the cloudformation directory
           aws s3 sync ./cloudformation s3://ternary-onboarding-templates/cloudformation/ --delete
