@@ -27,6 +27,7 @@ data "aws_iam_policy_document" "ternary_cmp_service_agent_permissions" {
       "compute-optimizer:GetAutoScalingGroupRecommendations",
       "compute-optimizer:GetEBSVolumeRecommendations",
       "compute-optimizer:GetEC2InstanceRecommendations",
+      "compute-optimizer:GetIdleRecommendations",
       "compute-optimizer:GetLambdaFunctionRecommendations",
       "dynamodb:DescribeTable",
       "dynamodb:ListTables",
