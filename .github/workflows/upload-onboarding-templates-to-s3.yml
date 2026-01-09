@@ -28,5 +28,7 @@ jobs:
           mkdir -p cloudformation
           # Copy the specific file to the cloudformation directory
           cp aws/centralized-monitoring/ternary-monitoring-cfn.json cloudformation/
+          cp aws/linked-account/ternary-linked-account-role-create-cfn.json cloudformation/
+          cp aws/payer-account/ternary-payer-account-cfn.json cloudformation/
           # Upload only the cloudformation directory
           aws s3 sync ./cloudformation s3://ternary-onboarding-templates/cloudformation/ --delete
