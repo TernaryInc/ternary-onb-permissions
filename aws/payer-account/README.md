@@ -12,7 +12,7 @@ This module provides two deployment options:
 
 ## Usage
 
-- For Terraform usage, see [this example](../../examples/aws_payer-monitoring.tf)
+- For Terraform usage, see [this example](../../examples/aws_payer-account.tf)
 - For CloudFormation, upload the template through the AWS console
 
 ## Output
